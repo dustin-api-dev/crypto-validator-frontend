@@ -1,0 +1,531 @@
+/* =========================
+   Global Reset for Landing
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0c0d0e;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* =========================
+   Container
+========================= */
+.gemini-container {
+  color: #ffffff;
+  overflow-x: hidden;
+  background: #0c0d0e;
+}
+
+/* =========================
+   Navbar
+========================= */
+.gemini-navbar {
+  padding: 1.5rem;
+  position: relative;
+  z-index: 10;
+  background: #0c0d0e;
+}
+
+.gemini-nav-content {
+  display: flex;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.gemini-logo-img {
+  height: 150px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* =========================
+   Hero Section - FIXED
+========================= */
+.gemini-hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 3rem;
+  position: relative;
+  background: #0c0d0e;
+  text-align: center;
+}
+
+/* Gradient overlays */
+.gemini-hero-bg-effect {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    /* 1050px 6000px at center, */
+  #fe7310,
+    transparent 80%
+  );
+  pointer-events: none;
+}
+
+.gemini-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+    circle at center,
+    rgba(254, 115, 16, 0.1),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.gemini-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* =========================
+   Hero Text
+========================= */
+.gemini-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0, 220, 250, 0.1);
+  border: 1px solid rgba(0, 220, 250, 0.25);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.gemini-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #00dcfa;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
+}
+
+.gemini-hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.gemini-gradient-text {
+  background: linear-gradient(135deg, #ffffff, #8a8a8a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gemini-hero-subtitle {
+  max-width: 600px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   Buttons
+========================= */
+.gemini-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.gemini-btn-primary,
+.gemini-btn-cta {
+  background: linear-gradient(135deg, #ffffff, #f2f2f2);
+  color: #000;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+}
+
+.gemini-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.gemini-btn-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================
+   Floating Cards
+========================= */
+.gemini-floating-cards {
+  display: flex;
+  gap: 1rem;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+.gemini-float-card {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.gemini-float-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+.gemini-card-icon {
+  color: #00dcfa;
+  width: 24px;
+  height: 24px;
+}
+
+.gemini-card-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.gemini-card-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* =========================
+   Features Section
+========================= */
+.gemini-features-section {
+  padding: 6rem 3rem;
+  background: #ffffff;
+}
+
+.gemini-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.gemini-section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #000;
+}
+
+.gemini-section-description {
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.gemini-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.gemini-feature-box {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.gemini-feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: #fe7310;
+}
+
+.gemini-feature-icon-wrapper {
+  margin-bottom: 1rem;
+}
+
+.gemini-feature-icon {
+  color: #000;
+  width: 32px;
+  height: 32px;
+}
+
+.gemini-feature-title {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.gemini-feature-text {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.6;
+}
+
+/* =========================
+   Security Section
+========================= */
+.gemini-security-section {
+  padding: 6rem 3rem;
+  background: linear-gradient(135deg, #fe7310 0%, #ff9145 100%);
+  position: relative;
+}
+
+.gemini-security-content {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.gemini-security-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.gemini-security-badge-large {
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+.gemini-badge-icon-large {
+  width: 5rem;
+  height: 5rem;
+  color: white;
+}
+
+.gemini-security-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.gemini-security-description {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.gemini-security-features {
+  display: grid;
+  gap: 1rem;
+}
+
+.gemini-security-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  font-size: 1rem;
+  color: white;
+}
+
+.gemini-check-icon {
+  color: #00dcfa;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* =========================
+   CTA Section
+========================= */
+.gemini-cta-section {
+  padding: 6rem 3rem;
+  text-align: center;
+  background: #0c0d0e;
+  position: relative;
+}
+
+.gemini-cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(254, 115, 16, 0.15),
+    transparent 70%
+  );
+}
+
+.gemini-cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.gemini-cta-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.gemini-cta-text {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2.5rem;
+  font-size: 1.2rem;
+}
+
+/* =========================
+   Footer
+========================= */
+.gemini-footer {
+  padding: 4rem 3rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0c0d0e;
+}
+
+.gemini-footer-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.gemini-footer-main {
+  max-width: 350px;
+}
+
+.gemini-logo-footer-img {
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+.gemini-footer-description {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.gemini-footer-bottom {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 1024px) {
+  .gemini-hero-title {
+    font-size: 3rem;
+  }
+
+  .gemini-security-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .gemini-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .gemini-hero {
+    padding: 3rem 1.5rem;
+    min-height: 70vh;
+  }
+
+  .gemini-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .gemini-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .gemini-floating-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gemini-security-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .gemini-cta-title {
+    font-size: 2rem;
+  }
+
+  .gemini-navbar {
+    padding: 1rem 1.5rem;
+  }
+}

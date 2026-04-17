@@ -1,0 +1,335 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bitcoin_landing_body{
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(241, 247, 253);
+}
+
+.bitcoin_hero_section{
+    width: 100%;
+    height: max-content;
+    padding: 14px 100px;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.bitcoin_hero_text_container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-right: 2px;
+    /* background-color: red; */
+}
+
+.bitcoin_hero_text_container h1{
+    color: #2D323B;
+    font-size: 60px;
+    font-family: "Poppins", sans-serif;
+    font-weight: bolder;
+    line-height: 80px;
+}
+
+.bitcoin_hero_text_container p{
+    color: #2D323B;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    line-height: 36px;
+}
+
+.bitcoin_hero_text_container button{
+    width: max-content;
+    height: max-content;
+    padding: 12px 30px;
+    color: #000;
+    border: 2px solid rgb(39, 147, 255);
+    background-color: transparent;
+    border-radius: 100px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 350ms ease-in-out;
+}
+
+.bitcoin_hero_text_container button:hover{
+    background-color: rgb(39, 147, 255);
+    color: #fff;
+}
+
+.bitcoin_hero_image_container{
+    width: 50%;
+    height: 500px;
+    /* background-color: blue; */
+}
+
+.bitcoin_hero_image_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.bitcoin_landing_wallets_connected_section{
+    width: 100%;
+    height: max-content;
+    padding: 50px 100px;
+    background-color: rgb(39, 147, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.bitcoin_landing_wallets_connected_section h1{
+    color: #fff;
+    font-size: 40px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+.bitcoin_landing_wallets_connected_section h1 span{
+    color: rgba(247, 250, 253, 0.7);
+}
+
+.bitcoin_landing_wallets_connected_section button{
+    width: max-content;
+    padding: 14px 30px;
+    color: #000;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.bitcoion_landing_feature_section{
+    width: 100%;
+    height: max-content;
+    padding: 12px 100px;
+    margin-top: 100px;
+}
+
+.bitcoin_landing_feature_top{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bitcoin_landing_feature_top h1{
+    width: 60%;
+    color: #202329;
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+.bitcoin_landing_feature_card_container{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 160px;
+    margin-top: 100px;
+}
+
+.bitcoin_landing_feature_card{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dir_change{
+    flex-direction: row-reverse;
+}
+
+.bitcoin_landing_feature_card_image_container{
+    width: 50%;
+    height: 520px;
+    /* background-color: green; */
+}
+
+.rd_change{
+    width: 45%;
+}
+
+.image_change{
+    width: 45%;
+}
+
+.bitcoin_landing_feature_card_image_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.bitcoin_landing_feature_card_text_container{
+    width: 45%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.text_change{
+    width: 50%;
+}
+
+.bitcoin_landing_feature_card_text_container h2{
+    color: #2D323B;
+    font-size: 36px;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+}
+
+.bitcoin_landing_feature_card_text_container p{
+    color: #2D323B;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    line-height: 34px;
+}
+
+.get_the_most_of_bitcooin_wallet_section{
+    width: 100%;
+    height: max-content;
+    padding: 80px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: radial-gradient(103.91% 103.91% at 50% -3.91%, rgb(44, 55, 79) 0%, rgb(19, 23, 32) 100%);
+    margin-top: 80px;
+}
+
+.get_the_most_of_bitcooin_wallet_section h2{
+    color: #fff;
+    font-size: 36px;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.get_the_most_of_bitcooin_wallet_section p{
+    color: #fff;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.get_the_most_of_bitcooin_wallet_section button{
+    width: max-content;
+    height: max-content;
+    padding: 12px 30px;
+    background-color: rgb(39, 147, 255);
+    color: #fff;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 350ms ease-in-out;
+}
+
+.get_the_most_of_bitcooin_wallet_section button:hover{
+    background-color: rgb(25, 109, 193)
+}
+
+
+
+
+@media screen and (max-width: 768px){
+
+    .bitcoin_hero_section{
+        padding: 14px 16px;
+        flex-direction: column-reverse;
+    }
+    
+    .bitcoin_hero_image_container{
+        width: 100%;
+        height: 360px;
+    }
+
+    .bitcoin_hero_text_container{
+        width: 100%;
+    }
+    
+    .bitcoin_hero_text_container h1{
+        font-size: 40px;
+        line-height: 60px;
+    }
+
+    .bitcoin_landing_wallets_connected_section{
+        padding: 40px 16px;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .bitcoin_landing_wallets_connected_section h1{
+        font-size: 34px;
+        text-align: center;
+        line-height: 40px;
+    }
+
+    .bitcoion_landing_feature_section{
+        padding: 12px 16px;
+        margin-top: 50px;
+    }
+
+    .bitcoin_landing_feature_top h1{
+        width: 100%;
+        font-size: 26px;
+    }
+
+    .bitcoin_landing_feature_card_container{
+        gap: 60px;
+        margin-top: 50px;
+    }
+
+    .bitcoin_landing_feature_card{
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .bitcoin_landing_feature_card_image_container{
+        width: 100%;
+        height: 360px;
+    }
+
+    .bitcoin_landing_feature_card_text_container{
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .get_the_most_of_bitcooin_wallet_section{
+        padding: 60px 16px;
+        margin-top: 50px;
+    }
+
+    .get_the_most_of_bitcooin_wallet_section h2{
+        font-size: 30px;
+    }
+
+}

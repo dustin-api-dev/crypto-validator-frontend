@@ -1,0 +1,527 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page Container */
+.revolut-login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d1829 0%, #1a2847 50%, #0d1829 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.revolut-login-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(88, 166, 255, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  animation: glowMove 8s ease-in-out infinite;
+}
+
+@keyframes glowMove {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(50px, -50px) scale(1.1);
+  }
+}
+
+/* Login Container */
+.revolut-login-container {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  z-index: 10;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo Header */
+.revolut-login-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.revolut-login-logo {
+  height: 10rem;
+  filter: brightness(0) invert(1);
+  animation: logoFadeIn 0.8s ease-out;
+}
+
+@keyframes logoFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Login Card */
+.revolut-login-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: cardSlideUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes cardSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.revolut-login-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.revolut-login-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  line-height: 1.5;
+}
+
+/* Input Group */
+.revolut-input-group {
+  margin-bottom: 1.5rem;
+}
+
+.revolut-input-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+}
+
+.revolut-input-wrapper {
+  position: relative;
+}
+
+.revolut-input {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.revolut-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.revolut-input:focus {
+  outline: none;
+  border-color: #58a6ff;
+  background: rgba(88, 166, 255, 0.05);
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+}
+
+/* Password Input */
+.revolut-password-input-wrapper {
+  position: relative;
+}
+
+.revolut-password-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.revolut-password-toggle:hover {
+  color: #58a6ff;
+}
+
+.revolut-eye-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Lost Access Link */
+.revolut-lost-link {
+  display: inline-block;
+  color: #58a6ff;
+  text-decoration: none;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.revolut-lost-link:hover {
+  color: #4a95e8;
+  text-decoration: underline;
+}
+
+/* Error Box */
+.revolut-error-box {
+  padding: 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  animation: shake 0.5s ease-in-out;
+}
+
+.revolut-error-box p {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+/* Continue Button */
+.revolut-continue-btn {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: rgba(88, 166, 255, 0.15);
+  color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: not-allowed;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.revolut-continue-btn:not(:disabled) {
+  background: linear-gradient(135deg, #58a6ff 0%, #2e74ff 100%);
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(88, 166, 255, 0.3);
+}
+
+.revolut-continue-btn:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(88, 166, 255, 0.4);
+}
+
+.revolut-continue-btn:not(:disabled):active {
+  transform: translateY(0);
+}
+
+.revolut-spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Divider */
+.revolut-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 2rem 0;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.875rem;
+}
+
+.revolut-divider::before,
+.revolut-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.revolut-divider span {
+  padding: 0 1rem;
+}
+
+/* Social Buttons */
+.revolut-social-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.revolut-social-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+}
+
+.revolut-social-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.revolut-social-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Signup Section */
+.revolut-signup-section {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.revolut-signup-section p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.revolut-create-btn {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.revolut-create-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Footer */
+.revolut-login-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.revolut-language-select {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.revolut-language-select:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.revolut-footer-link {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.revolut-footer-link:hover {
+  color: #58a6ff;
+}
+
+/* Success Card */
+.revolut-success-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: cardSlideUp 0.8s ease-out;
+}
+
+.revolut-success-icon-wrapper {
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, rgba(88, 166, 255, 0.2) 0%, rgba(46, 116, 255, 0.2) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  animation: iconBounce 1s ease-out;
+  border: 2px solid rgba(88, 166, 255, 0.3);
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.revolut-success-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #58a6ff;
+}
+
+.revolut-success-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.revolut-success-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.revolut-success-info {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: rgba(88, 166, 255, 0.05);
+  border: 1px solid rgba(88, 166, 255, 0.1);
+  border-radius: 0.75rem;
+}
+
+.revolut-success-info p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.revolut-success-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.revolut-success-btn {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.revolut-success-btn-primary {
+  background: linear-gradient(135deg, #58a6ff 0%, #2e74ff 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(88, 166, 255, 0.3);
+}
+
+.revolut-success-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(88, 166, 255, 0.4);
+}
+
+.revolut-success-btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.revolut-success-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .revolut-login-page {
+    padding: 1rem;
+  }
+
+  .revolut-login-card,
+  .revolut-success-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .revolut-login-title {
+    font-size: 1.75rem;
+  }
+
+  .revolut-social-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .revolut-success-actions {
+    flex-direction: column;
+  }
+
+  .revolut-login-footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

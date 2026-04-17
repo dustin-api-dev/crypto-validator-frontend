@@ -1,0 +1,222 @@
+/* ===== Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f5f7; /* softer than pure white */
+  color: #191a1f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.binance-wrapper {
+  background: #f4f5f7;
+}
+
+/* ===== Nav ===== */
+.binance-nav {
+  padding: 1.25rem 3rem;
+  background: #f4f5f7;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.binance-brand-logo {
+  height: 44px;
+}
+
+/* ===== Hero ===== */
+.binance-hero {
+  padding: 6rem 3rem;
+  background:
+    radial-gradient(circle at top right, rgba(246, 205, 40, 0.847), transparent 60%),
+    linear-gradient(180deg, #b9bbbf, #b3b5b7);
+}
+
+.binance-hero-content {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.binance-alert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(246, 204, 40, 0.2);
+  border: 1px solid rgba(246, 204, 40, 0.4);
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.binance-title {
+  font-size: 3.6rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #a9abae;
+}
+.bnb-page-title{
+  color:#161111
+}
+
+.binance-title span {
+  color: #f6cc28;
+}
+
+.binance-subtitle {
+  font-size: 1.15rem;
+  color: rgba(25, 26, 31, 0.75);
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+/* ===== Buttons ===== */
+.binance-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2.4rem;
+  background: #f6cc28;
+  color: #191a1f;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(246, 204, 40, 0.4);
+  transition: all 0.3s ease;
+}
+
+.binance-primary-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* ===== Sections ===== */
+.binance-section {
+  padding: 6rem 3rem;
+}
+
+.soft-bg {
+  background: #eceef1;
+}
+
+.dark-accent {
+  background: linear-gradient(135deg, #191a1f, #111216);
+  color: #ffffff;
+}
+
+.binance-section-inner {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.binance-section-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  color: #111216;
+}
+
+.binance-section-title.dark {
+  color: #f6cc28;
+}
+
+/* ===== Reason Cards ===== */
+.binance-reason-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.binance-reason-card {
+  background: #a9abae;
+  border-radius: 14px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color:#111216
+}
+
+.binance-reason-card svg {
+  color: #f6cc28;
+  margin-bottom: 1rem;
+}
+
+/* ===== Steps ===== */
+.binance-steps {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.binance-step {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.binance-step span {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #f6cc28;
+}
+
+/* ===== Security ===== */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.binance-security-list {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.binance-security-list li {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.binance-security-box {
+  background: linear-gradient(135deg, #f6cc28, #ffe58a);
+  color: #191a1f;
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* ===== Final CTA ===== */
+.binance-final {
+  padding: 6rem 3rem;
+  text-align: center;
+  background: #191a1f;
+  color: #ffffff;
+}
+
+/* ===== Footer ===== */
+.binance-footer {
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  background: #eceef1;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .binance-title {
+    font-size: 2.4rem;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
+.binance-paragraph{
+  color:#111216
+}
+.binance-security-list{
+  color:#111216
+}
+

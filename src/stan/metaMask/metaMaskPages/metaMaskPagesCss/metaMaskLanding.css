@@ -1,0 +1,375 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.metamask_landing_body{
+    width: 100%;
+    background-color: #000;
+}
+
+.metamask_home-widget {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #07122d; */
+    background-color: #000;
+}
+  
+.metamask_home-widget-wrapper {
+    width: 95%;
+    height: 90%;
+}
+
+.metamask_hero{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-bottom: 20px; */
+    /* background-color: yellow; */
+}
+
+.metamask_hero_wrap{
+    width: 100%;
+    padding: 0px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.metamask_hero_img{
+    width: 50%;
+    height: 100%;
+} 
+
+.metamask_hero_Text{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    /* background-color: red; */
+    & h1{
+        color: #fff;
+        font-size: 40px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        line-height: 50px;
+    }
+
+    & p{
+        color: #bcbcbc;
+        font-size: 16px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+    }
+
+    & button{
+        width: max-content;
+        padding: 14px 50px;
+        background-color: blue;
+        color: #fff;
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        border: none;
+        border-radius: 100px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+}
+
+.metamask_news_letter{
+    width: 100%;
+    background-color: #403f3f;
+    padding: 100px 0px;
+}
+
+
+.metamask_news_letter_wrap{
+    width: 100%;
+    padding: 0px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    justify-content: center;
+
+
+    & h1{
+        color: #fff;
+        font-size: 30px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+    }
+
+   & .subhead{
+       font-size: 18px;
+       font-weight: 500;
+    }
+
+    & p{
+        color: #fff;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+    }
+}
+
+.input-hold{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    gap: 10px;
+
+
+    & input, button{
+        border-radius: 6px;
+        border: none;
+    }
+
+    & input{
+        width: 30rem;
+        padding: 10px;
+        border: 1px solid lightgray;
+        font-size: 16px;
+    }
+
+    & button{
+        width: max-content;
+        background-color: blue;
+        padding: 10px 30px;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        cursor: pointer;
+    }
+}
+
+.metamask_webwallet{
+    width: 100%;
+    height: max-content;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: yellow; */
+}
+
+.metamask_webwallet_wrapper{
+    width: 100%;
+    height: max-content;
+    padding: 0px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.metamask_webwallet_Text{
+    width: 50%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+
+    & h1{
+        color: #fff;
+        font-size: 30px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+    }
+
+    & p{
+        color: #fff;
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+    }
+    
+   
+}
+.two{
+    
+        order: 2;
+    
+}
+
+.metamask_webwallet_img{
+    width: 50%;
+    height: 50vh;
+}
+
+.metamask_getStarted{
+    width: 100%;
+    padding: 70px 0px;
+    background-color: #403f3f;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    & h1{
+        color: white;
+        font-family: 'Poppins', sans-serif;;
+    }
+
+    & button{
+        width: max-content;
+        padding: 12px 30px;
+        background-color: blue;
+        color: #fff;
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        border: none;
+        border-radius: 100px;
+        cursor: pointer;
+    }
+}
+
+.metamask_getStarted_img{
+    width: 20%;
+    height:45%;
+}
+
+.what_is_metamask_body{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 100%;
+    height: max-content;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    & h1{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-transform: capitalize;
+    }
+}
+
+.metaVidieo{
+    width: 70%;
+    height: 80vh;
+    box-shadow: 3px 3px 5px grey;
+    border-radius: 20px;
+}
+
+
+
+@media (max-width:768px) {
+    .metamask_hero{
+        margin-top: 250px;
+        margin-bottom: 200px;
+    }
+    .metamask_hero_wrap{
+        width: 90%;
+        flex-direction: column;
+        height: max-content;
+    }
+
+    .metamask_hero_img{
+        width: 60%;
+    }
+
+    .metamask_hero_Text{
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+
+
+        & h1{
+            font-size: 50px;
+        }
+
+
+    }
+
+    .metamask_news_letter{
+        height: max-content;
+    }
+    .metamask_news_letter_wrap{
+        width: 70%;
+    }
+
+    .metamask_webwallet_wrapper{
+        flex-direction: column;
+    }
+
+    .metamask_webwallet_Text{
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .metamask_webwallet_img{
+        width: 100%;
+    }
+
+    .metamask_getStarted_img{
+        width: 30%;
+        height: 50%;
+     }
+
+}
+
+
+@media (max-width:425px) {
+    .metamask_hero{
+        margin-top: 100px;
+    }
+    .metamask_hero_Text{
+        & h1{
+            font-size: 30px;
+        }
+    }
+
+    .metamask_news_letter_wrap{
+        width: 98%;
+
+        & button{
+            font-size: 13px;
+        }
+       
+    }
+
+    .metamask_getStarted_img{
+        width: 50%;
+        height: 50%;
+    }
+
+    .metaVidieo{
+        width: 100%;
+ 
+     }
+ 
+     .what_is_metamask_body{
+         & h1{
+             font-size: 25px;
+         }
+     }
+}

@@ -1,0 +1,98 @@
+.kraken_header_body{
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 100px;
+}
+
+.kraken_header_logo_container{
+    width: 140px;
+    height: 60px;
+    /* background-color: yellow; */
+}
+
+.kraken_header_logo_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.kraken_header_nav_container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.kraken_menuactive, .kraken_menunotactive{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.kraken_menuactive{
+    color: #7133F6;
+}
+
+.kraken_menunotactive{
+    color: #000;
+}
+
+.kraken_header_button_container{
+    display: flex;
+    align-items: center;
+}
+
+.kraken_header_button_container button{
+    width: max-content;
+    padding: 12px 30px;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #7133F6;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    animation: bounce 2s infinite;/* Bounce for 2s */
+    transition: transform 0.4s; /* Optional for smoothness */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px); /* Bounces up */
+    }
+    60% {
+        transform: translateY(-8px); /* Smaller bounce */
+    }
+    80%, 100% {
+        transform: translateY(0); /* Rest for the remaining time */
+    }
+}
+
+
+@media screen and (max-width: 768px){
+    .kraken_header_nav_container{
+        display: none;
+    }
+
+    .kraken_header_body{
+        padding: 14px 16px;
+    }
+
+    .kraken_header_button_container button{
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .kraken_header_logo_container{
+        width: 130px;
+        height: 50px;
+        /* background-color: yellow; */
+    }
+}

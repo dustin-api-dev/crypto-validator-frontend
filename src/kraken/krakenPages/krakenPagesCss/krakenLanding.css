@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.kraken_landing_body{
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: #ece9f4;
+}
+
+.kraken_landing_hero_section{
+    width: 100%;
+    height: max-content;
+    padding: 50px 100px 0px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.kraken_hero_section_text_container{
+    width: 45%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    /* background-color: red; */
+}
+
+.kraken_hero_section_text_container h1{
+    color: #271156;
+    font-size: 46px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.kraken_hero_section_text_container p{
+    color: #271156;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.kraken_hero_section_text_container button{
+    width: max-content;
+    height: max-content;
+    padding: 16px 60px;
+    color: #fff;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    background-color: #7133F6;
+    margin-top: 10px;
+}
+
+.kraken_hero_section_image_container{
+    width: 45%;
+    height: 500px;
+    /* background-color: green; */
+}
+
+.kraken_hero_section_image_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.kraken_landing_section_one{
+    width: 100%;
+    height: max-content;
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background-color: #fff;
+}
+
+.kraken_landing_section_one h1{
+    color: #000;
+    font-size: 36px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+}
+
+.kraken_landing_section_one p{
+    width: 50%;
+    color: #000;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.kraken_landing_section_one img{
+    width: 100%;
+    height: 500px;
+    /* background-color: green; */
+    object-fit: contain;
+}
+
+.kraken_landing_section_two{
+    width: 100%;
+    height: max-content;
+    padding: 100px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background-color: #7133F6;
+}
+
+.kraken_landing_section_two h3{
+    color: #fff;
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+}
+
+.kraken_landing_section_two p{
+    color: #fff;
+    font-size: 22px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.kraken_landing_section_two button{
+    width: max-content;
+    height: max-content;
+    padding: 16px 60px;
+    color: #7133F6;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    .kraken_landing_hero_section{
+        padding: 50px 16px 0px 16px;
+        gap: 24px;
+        flex-direction: column;
+    }
+
+    .kraken_hero_section_text_container{
+        width: 100%;
+    }
+
+    .kraken_hero_section_image_container{
+        width: 100%;
+        height: 300px;
+    }
+
+    .kraken_landing_section_one{
+        padding: 50px 16px;
+    }
+
+    .kraken_landing_section_one h1{
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .kraken_landing_section_one p{
+        width: 100%;
+    }
+
+    .kraken_landing_section_one img{
+        height: 300px;
+    }
+
+    .kraken_landing_section_two{
+        padding: 60px 16px;
+    }
+    
+    .kraken_landing_section_two h3{
+        font-size: 28px;
+        text-align: center;
+    }
+    
+    .kraken_landing_section_two p{
+        font-size: 16px;
+        text-align: center;
+    }
+
+}

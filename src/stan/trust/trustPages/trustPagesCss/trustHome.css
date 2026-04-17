@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.trust_home_body{
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.trust_home_top{
+    width: 100%;
+    padding: 10px 0px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+}
+
+.trust_home_top > p{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.trust_home_top_logo{
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 100%;
+}
+
+.trust_home_top_logo > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trust_home_body_logo_container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    margin-top: 40px;
+    /* background-color: yellow; */
+}
+
+.trust_home_body_logo{
+    width: 240px;
+    height: 240px;
+    /* background-color: blue; */
+}
+
+.trust_home_body_logo > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.trust_home_body_logo_container > p{
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: blue;
+    text-align: center;
+    line-height: 30px;
+}
+
+.trust_home_body_logo_container > p > span{
+    font-weight: bolder;
+}
+
+.trust_home_icon_links_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 100px;
+    flex-wrap: wrap;
+    /* background-color: yellow; */
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.trust_home_icon_links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    /* background-color: red; */
+}
+
+.trust_home_icon_links > p{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: blue;
+}
+
+.trust_home_icon_link_top{
+    width: 250px;
+    height: 250px;
+    border: 2px solid blue;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.trust_home_icon{
+    width: 60%;
+    height: 50%;
+    object-fit: contain;
+}
+
+.block_chain_icon{
+    width: 100%;
+    height: 35%;
+}
+
+.trust_home_icon_size{
+    font-size: 60px;
+}
+
+.trust_home_btn_container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trust_home_btn{
+    width: 40%;
+    padding: 14px 0px;
+    color: #fff;
+    background-color: blue;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    margin-top: 30px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .trust_home_icon_links_container{
+        padding: 20px 20px;
+        gap: 30px;
+        /* background-color: yellow; */
+    }
+
+    .trust_home_icon_link_top{
+        width: 150px;
+        height: 150px;
+    }
+    .trust_home_icon_size{
+        font-size: 50px;
+    }
+
+    .trust_home_btn_container{
+        padding: 0px 20px;
+    }
+
+    .trust_home_btn{
+        width: 100%;
+    }
+}

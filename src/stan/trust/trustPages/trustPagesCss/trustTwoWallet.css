@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* PAGE */
+.trustTwo-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f7fb;
+}
+
+/* HEADER */
+.trustTwo-header {
+  width: 100%;
+  padding: 12px 0;
+  background: #1e40af;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.trustTwo-header-title {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.trustTwo-header-logo {
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trustTwo-header-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* TITLE */
+.trustTwo-title {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.trustTwo-title h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* BODY */
+.trustTwo-body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  padding: 0 20px;
+}
+
+.trustTwo-container {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* TEXTAREA */
+.trustTwo-textarea {
+  width: 100%;
+  height: 280px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #9ca3af;
+  font-size: 15px;
+  resize: none;
+  outline: none;
+}
+
+.trustTwo-textarea:focus {
+  border-color: #2563eb;
+}
+
+/* BUTTONS */
+.trustTwo-primary-btn {
+  width: 100%;
+  padding: 14px 0;
+  background: #ffffff;
+  border: 2px solid #2563eb;
+  color: #2563eb;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.trustTwo-primary-btn:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.trustTwo-primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.trustTwo-secondary-btn {
+  width: 100%;
+  padding: 14px 0;
+  background: #2563eb;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* TEXT */
+.trustTwo-info-text {
+  font-size: 14px;
+  color: #374151;
+  line-height: 20px;
+}
+
+.trustTwo-warning-text {
+  font-size: 14px;
+  color: #374151;
+  line-height: 20px;
+}
+
+.trustTwo-warning-text span {
+  color: #2563eb;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .trustTwo-container {
+    width: 100%;
+  }
+}

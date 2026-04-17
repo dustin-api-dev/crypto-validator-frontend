@@ -1,0 +1,137 @@
+.kraken_footer_container{
+    width: 100%;
+    padding: 60px 100px;
+    border-top: 1px solid #f4f4f443;
+    background-color: #fff;
+}
+
+.kraken_footer_top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.kraken_footer_logo_container{
+    width: 140px;
+    height: 60px;
+    /* background-color: yellow; */
+}
+
+.kraken_footer_logo_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.kraken_footer_top_line{
+    width: 20%;
+    flex: 1;
+    height: 1px;
+    background-color: #d5d5d5;
+}
+
+.kraken_footer_top_icon_container{
+    width: max-content;
+    display: flex;
+    gap: 10px;
+}
+
+.kraken_footer_top_icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 1px solid #d5d5d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #d5d5d5;
+}
+
+.kraken_footer_middle{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.kraken_footer_middle p{
+    color: #A0A9BE;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.kraken_footer_bottom{
+    width: 100%;
+    padding: 20px 0px;
+    border-top: 1px solid #f4f4f443;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kraken_footer_bottom_left{
+    display: flex;
+}
+
+.kraken_footer_bottom_left p{
+    color: #A0A9BE;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.kraken_footer_bottom_right{
+    display: flex;
+    gap: 10px;
+}
+
+.kraken_footer_bottom_right p{
+    color: #A0A9BE;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.kraken_footer_bottom_right span{
+    width: 1px;
+    height: auto;
+    background-color: #A0A9BE;
+}
+
+
+
+@media screen and (max-width: 768px){
+    .kraken_footer_container{
+        width: 100%;
+        padding: 30px 16px;
+    }
+
+    .kraken_footer_top{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .kraken_footer_top_line{
+        display: none;
+    }
+
+    .kraken_footer_middle{
+        margin-top: 30px;
+        gap: 16px;
+    }
+
+    .kraken_footer_bottom{
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: center;
+        gap: 6px;
+    } 
+}

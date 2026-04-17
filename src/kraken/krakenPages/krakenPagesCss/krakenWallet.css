@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.kraken_wallet_body{
+    width: 100%;
+    padding-bottom: 30px;
+    background-color: #ece9f4;
+}
+
+.kraken_wallet_top_body{
+    width: 100%;
+    padding: 10px 0px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    background-color: #7133F6;
+}
+
+.kraken_wallet_top_body > p{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.kraken_wallet_top_logo{
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 100%;
+}
+
+.kraken_wallet_top_logo > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.kraken_wallet_h3{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #7133F6;
+}
+
+.kraken_wallet_bottom_body{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.kraken_wallet_bottom_container{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.kraken_wallet_text_area{
+    width: 100%;
+    height: 300px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 20px 10px 20px 20px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    outline: none;
+}
+
+.kraken_unlock_with_passphrase_btn{
+    width: 100%;
+    padding: 12px 0px;
+    background-color: #fff;
+    border: 2px solid #7133F6;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: #7133F6;
+    font-weight: 500;
+    transition: all 350ms ease-in-out;
+}
+
+.kraken_unlock_with_passphrase_btn:hover{
+    background-color: #7133F6;
+    border: none;
+    color: #fff;
+}
+
+.kraken_unlock_with_faceid_btn{
+    width: 100%;
+    padding: 12px 0px;
+    background-color: #7133F6;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.kraken_wallet_bottom_container > p{
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #7133F6;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.kraken_wallet_bottom_container > p > span{
+    color: #7133F6;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .kraken_wallet_bottom_container{
+        width: 100%;
+    }
+    
+    .kraken_wallet_bottom_body{
+        padding: 0px 20px;
+    }
+}

@@ -1,0 +1,155 @@
+/* ================= ROOT ================= */
+.etoro_landing_body {
+  background: #ffffff;
+  font-family: 'Inter', sans-serif;
+  color: #000120;
+}
+
+/* ================= HEADER ================= */
+.etoro_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 6%;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.etoro_logo {
+  height: 40px;
+}
+
+.etoro_header_btn {
+  background: #13c636;
+  color: #ffffff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.etoro_header_btn:hover {
+  opacity: 0.9;
+}
+
+/* ================= HERO ================= */
+.etoro_hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  padding: 80px 6%;
+  gap: 60px;
+}
+
+.etoro_hero_text h1 {
+  font-size: 3rem;
+  color: #13c636;
+  margin-bottom: 20px;
+}
+
+.etoro_hero_text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.etoro_hero_text button {
+  background: #13c636;
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.etoro_hero_image img {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* ================= TRUST ================= */
+.etoro_trust {
+  padding: 80px 6%;
+  background: #ffffff;
+}
+
+.etoro_trust h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #13c636;
+  margin-bottom: 60px;
+}
+
+.etoro_trust_cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.etoro_card {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.etoro_card:hover {
+  transform: translateY(-6px);
+}
+
+.etoro_card h3 {
+  color: #13c636;
+  margin-bottom: 15px;
+}
+
+/* ================= DARK CTA ================= */
+.etoro_dark_cta {
+  background: #000120;
+  color: #ffffff;
+  padding: 80px 6%;
+  text-align: center;
+}
+
+.etoro_dark_cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.etoro_dark_cta p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.7;
+}
+
+.etoro_dark_cta button {
+  background: #13c636;
+  color: #ffffff;
+  border: none;
+  padding: 15px 32px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+.etoro_footer {
+  padding: 25px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .etoro_hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .etoro_trust_cards {
+    grid-template-columns: 1fr;
+  }
+}

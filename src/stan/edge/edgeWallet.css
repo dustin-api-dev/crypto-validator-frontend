@@ -1,0 +1,181 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #111;
+}
+
+/* WRAPPER */
+.edge-wallet-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  background: #f9f9f9d6;
+}
+
+/* BOX */
+.edge-wallet-box {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+/* LOGO */
+.edge-wallet-logo {
+  height: 48px;
+  margin-bottom: 20px;
+}
+
+/* HEADINGS */
+.edge-wallet-box h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+  /* background-color: #fff; */
+  color: #1edb28;
+}
+
+.edge-subtitle {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 24px;
+}
+
+/* PANEL */
+.edge-wallet-panel {
+  border: 1px solid #eaeaea;
+  border-radius: 14px;
+  padding: 28px 24px;
+  background: #ffffff;
+  color: #111;
+}
+
+/* SECURITY */
+.edge-security {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #16a34a;
+  margin-bottom: 18px;
+}
+
+/* INPUTS */
+.edge-input-group {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.edge-input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.edge-input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 14px;
+}
+
+/* PASSWORD */
+.edge-password-field {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+}
+
+.edge-password-field input {
+  border: none;
+  flex: 1;
+  padding: 12px 14px;
+}
+
+.edge-password-field button {
+  background: none;
+  border: none;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+/* ERROR */
+.edge-error {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+/* BUTTON */
+.edge-submit-btn {
+  width: 100%;
+  margin-top: 6px;
+  padding: 14px;
+  background: #16a34a;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.edge-submit-btn:disabled {
+  opacity: 0.7;
+}
+
+/* NOTICE */
+.edge-notice {
+  font-size: 12px;
+  color: #666;
+  margin-top: 14px;
+}
+
+/* ACTIONS */
+.edge-wallet-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.edge-wallet-actions button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.edge-wallet-actions button.dark {
+  background: #000;
+  color: #fff;
+}
+
+/* FOOTER */
+.edge-wallet-footer {
+  margin-top: 18px;
+  font-size: 12px;
+  color: #777;
+}
+
+/* SPIN */
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

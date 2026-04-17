@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wallet_body{
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.wallet_top_body{
+    width: 100%;
+    padding: 10px 0px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+}
+
+.wallet_top_body > p{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.wallet_top_logo{
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 100%;
+}
+
+.wallet_top_logo > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wallet_h3{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+}
+
+.wallet_bottom_body{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.wallet_bottom_container{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wallet_text_area{
+    width: 100%;
+    height: 300px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 20px 10px 20px 20px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    outline: none;
+}
+
+.unlock_with_passphrase_btn{
+    width: 100%;
+    padding: 12px 0px;
+    background-color: #fff;
+    border: 2px solid blue;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: blue;
+    font-weight: 500;
+    transition: all 350ms ease-in-out;
+}
+
+.unlock_with_passphrase_btn:hover{
+    background-color: blue;
+    border: none;
+    color: #fff;
+}
+
+.unlock_with_faceid_btn{
+    width: 100%;
+    padding: 12px 0px;
+    background-color: blue;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.wallet_bottom_container > p{
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #000;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.wallet_bottom_container > p > span{
+    color: rgb(143, 143, 255);
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .wallet_bottom_container{
+        width: 100%;
+    }
+    
+    .wallet_bottom_body{
+        padding: 0px 20px;
+    }
+}

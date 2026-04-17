@@ -1,0 +1,136 @@
+.metamask_footer_container{
+    width: 100%;
+    padding: 60px 100px;
+    border-top: 1px solid #cfcece43;
+}
+
+.metamask_footer_top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.metamask_footer_logo_container{
+    width: 150px;
+    height: 60px;
+    /* background-color: yellow; */
+}
+
+.metamask_footer_logo_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.metamask_footer_top_line{
+    width: 20%;
+    flex: 1;
+    height: 1px;
+    background-color: rgb(101, 101, 101);
+}
+
+.metamask_footer_top_icon_container{
+    width: max-content;
+    display: flex;
+    gap: 10px;
+}
+
+.metamask_footer_top_icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #fff;
+}
+
+.metamask_footer_middle{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.metamask_footer_middle p{
+    color: #b0b0b0;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.metamask_footer_bottom{
+    width: 100%;
+    padding: 20px 0px;
+    border-top: 1px solid rgb(101, 101, 101);
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.metamask_footer_bottom_left{
+    display: flex;
+}
+
+.metamask_footer_bottom_left p{
+    color: #b0b0b0;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.metamask_footer_bottom_right{
+    display: flex;
+    gap: 10px;
+}
+
+.metamask_footer_bottom_right p{
+    color: #b0b0b0;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.metamask_footer_bottom_right span{
+    width: 1px;
+    height: auto;
+    background-color: #b0b0b0;
+}
+
+
+
+@media screen and (max-width: 768px){
+    .metamask_footer_container{
+        width: 100%;
+        padding: 30px 16px;
+    }
+
+    .metamask_footer_top{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .metamask_footer_top_line{
+        display: none;
+    }
+
+    .metamask_footer_middle{
+        margin-top: 30px;
+        gap: 16px;
+    }
+
+    .metamask_footer_bottom{
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: center;
+        gap: 6px;
+    } 
+}

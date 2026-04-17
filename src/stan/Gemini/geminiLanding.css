@@ -1,0 +1,232 @@
+/* ============================
+   Base Layout
+============================ */
+.login-wrapper {
+  min-height: 100vh;
+  background: #0c0d0e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* ============================
+   Logo + Header
+============================ */
+.login-header-section {
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.login-brand-image {
+  height: 120px;
+  margin-bottom: -3em;
+  filter: drop-shadow(0 0 12px rgba(0, 220, 250, 0.35));
+  animation: fadeIn 0.8s ease;
+}
+
+.login-heading {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.login-description {
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+/* ============================
+   Card
+============================ */
+.login-panel {
+  background: #1a1b1e;
+  border: 1px solid #2a2b2f;
+  border-radius: 1.25rem;
+  padding: 2rem;
+  animation: fadeUp 1s ease forwards;
+}
+
+/* ============================
+   Security Badge
+============================ */
+.security-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: #fe7310;
+  border: 1px solid rgba(0, 220, 250, 0.25);
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: #d1d5db;
+}
+
+/* ============================
+   Inputs
+============================ */
+.input-group {
+  margin-bottom: 1.25rem;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: #d1d5db;
+  margin-bottom: 0.4rem;
+}
+
+.text-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #0c0d0e;
+  border: 1px solid #3a3b40;
+  border-radius: 0.6rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  transition: border-color 0.25s ease;
+}
+
+.text-field:focus {
+  outline: none;
+  border-color: #fe7310;
+}
+
+.password-field {
+  position: relative;
+}
+
+.visibility-toggle {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+/* ============================
+   Error
+============================ */
+.error-message {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #f87171;
+  padding: 0.75rem;
+  border-radius: 0.6rem;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+/* ============================
+   Button
+============================ */
+.action-button {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 0.75rem;
+  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: #fe7310;
+  color: #000;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.action-button:hover {
+  background: #f7f8f9;
+  transform: scale(1.02);
+}
+
+.action-button:disabled {
+  background: #fe73106f;
+  color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ============================
+   Info Box
+============================ */
+.info-notice {
+  margin-top: 1.5rem;
+  padding: 0.9rem;
+  background: #0c0d0e;
+  border: 1px solid #2a2b2f;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ============================
+   Success Page
+============================ */
+.success-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 220, 250, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+/* ============================
+   Footer
+============================ */
+.footer-disclaimer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #6b7280;
+}
+
+/* ============================
+   Animations
+============================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { 
+    transform: rotate(360deg); 
+  }
+}

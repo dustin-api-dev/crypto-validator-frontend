@@ -1,0 +1,706 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.revolut-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  color: #ffffff;
+  background: #fbfcfd;
+  overflow-x: hidden;
+}
+
+/* Navigation */
+.revolut-navbar {
+  background: rgba(241, 242, 243, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1.25rem 0;
+  backdrop-filter: blur(10px);
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.revolut-nav-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.revolut-logo-img {
+  height: 10rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.revolut-logo-img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+/* Hero Section */
+.revolut-hero {
+  position: relative;
+  padding: 7rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1c2128 100%);
+}
+
+.revolut-hero-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(46, 116, 255, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+  animation: glowPulse 5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.revolut-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.revolut-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(46, 116, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(46, 116, 255, 0.2);
+  border-radius: 2rem;
+  padding: 0.5rem 1.25rem;
+  margin-bottom: 2.5rem;
+  font-size: 0.875rem;
+  color: #58a6ff;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.revolut-badge-pulse {
+  width: 8px;
+  height: 8px;
+  background: #58a6ff;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.8);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.4);
+  }
+}
+
+.revolut-hero-title {
+  font-size: 5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.revolut-gradient-text {
+  background: linear-gradient(135deg, #58a6ff 0%, #2e74ff 50%, #1f6feb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientSlide 4s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientSlide {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.revolut-hero-subtitle {
+  font-size: 1.375rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 3rem;
+  line-height: 1.7;
+  font-weight: 400;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.revolut-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.125rem 2.75rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.revolut-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.revolut-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.revolut-btn-primary {
+  background: linear-gradient(135deg, #58a6ff 0%, #2e74ff 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 40px rgba(46, 116, 255, 0.3);
+}
+
+.revolut-btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 50px rgba(46, 116, 255, 0.5);
+}
+
+.revolut-btn-cta {
+  background: #ffffff;
+  color: #0d1117;
+  padding: 1.25rem 3rem;
+  font-size: 1.125rem;
+  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
+}
+
+.revolut-btn-cta:hover {
+  background: #f0f0f0;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 50px rgba(255, 255, 255, 0.3);
+}
+
+.revolut-btn-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.revolut-btn:hover .revolut-btn-icon {
+  transform: translateX(5px);
+}
+
+/* Floating Cards */
+.revolut-floating-cards {
+  position: relative;
+  height: 180px;
+  margin-top: 4rem;
+}
+
+.revolut-feature-card {
+  position: absolute;
+  background: linear-gradient(135deg, rgba(22, 27, 34, 0.9) 0%, rgba(28, 33, 40, 0.9) 100%);
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 15px 40px rgba(46, 116, 255, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 220px;
+  backdrop-filter: blur(10px);
+}
+
+.revolut-card-1 {
+  left: 5%;
+  top: 0;
+  animation: floatCard 4s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.revolut-card-2 {
+  left: 36%;
+  transform: translateX(-50%);
+  top: 30px;
+  animation: floatCard 4s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+
+.revolut-card-3 {
+  right: 5%;
+  top: 0;
+  animation: floatCard 4s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.revolut-card-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #58a6ff;
+  filter: drop-shadow(0 0 8px rgba(88, 166, 255, 0.5));
+}
+
+.revolut-card-title {
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.revolut-card-desc {
+  font-size: 0.875rem;
+  color: #58a6ff;
+  font-weight: 500;
+}
+
+/* Features Section */
+.revolut-features-section {
+  padding: 7rem 2rem;
+  background: #161b22;
+  position: relative;
+}
+
+.revolut-section-header {
+  text-align: center;
+  margin-bottom: 4.5rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.revolut-section-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.revolut-section-description {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.revolut-features-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.revolut-feature-box {
+  background: linear-gradient(135deg, rgba(22, 27, 34, 0.5) 0%, rgba(28, 33, 40, 0.5) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 3rem 2.5rem;
+  border-radius: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.revolut-feature-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(88, 166, 255, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.revolut-feature-box:hover::before {
+  opacity: 1;
+}
+
+.revolut-feature-box:nth-child(1) { animation-delay: 0.1s; }
+.revolut-feature-box:nth-child(2) { animation-delay: 0.2s; }
+.revolut-feature-box:nth-child(3) { animation-delay: 0.3s; }
+.revolut-feature-box:nth-child(4) { animation-delay: 0.4s; }
+
+.revolut-feature-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(46, 116, 255, 0.2);
+  border-color: rgba(88, 166, 255, 0.3);
+}
+
+.revolut-feature-icon-wrapper {
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, rgba(88, 166, 255, 0.15) 0%, rgba(46, 116, 255, 0.15) 100%);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(88, 166, 255, 0.2);
+}
+
+.revolut-feature-box:hover .revolut-feature-icon-wrapper {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 10px 30px rgba(88, 166, 255, 0.3);
+}
+
+.revolut-feature-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #58a6ff;
+}
+
+.revolut-feature-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.revolut-feature-text {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Trust Section */
+.revolut-trust-section {
+  padding: 7rem 2rem;
+  background: #0d1117;
+  position: relative;
+  overflow: hidden;
+}
+
+.revolut-trust-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.revolut-trust-visual {
+  display: flex;
+  justify-content: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.revolut-trust-badge {
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(135deg, #58a6ff 0%, #2e74ff 100%);
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 30px 70px rgba(46, 116, 255, 0.4);
+  animation: floatSlow 5s ease-in-out infinite;
+  position: relative;
+}
+
+.revolut-trust-badge::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(135deg, #58a6ff 0%, #2e74ff 100%);
+  border-radius: 2rem;
+  z-index: -1;
+  opacity: 0.5;
+  filter: blur(25px);
+  animation: rotate 8s linear infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(-8deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.revolut-trust-icon {
+  width: 7rem;
+  height: 7rem;
+  color: white;
+  filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.3));
+}
+
+.revolut-trust-text {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.revolut-trust-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.revolut-trust-description {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.revolut-trust-features {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.revolut-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.125rem;
+  color: #ffffff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.revolut-trust-item:hover {
+  transform: translateX(10px);
+  background: rgba(88, 166, 255, 0.05);
+}
+
+.revolut-check-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #58a6ff;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 5px rgba(88, 166, 255, 0.5));
+}
+
+/* CTA Section */
+.revolut-cta-section {
+  padding: 7rem 2rem;
+  background: linear-gradient(135deg, #58a6ff 0%, #2e74ff 100%);
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.revolut-cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveBackground 25s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+.revolut-cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.revolut-cta-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.8s ease-out;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.revolut-cta-text {
+  font-size: 1.375rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Footer */
+.revolut-footer {
+  background: #0d1117;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 4rem 2rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.revolut-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.revolut-footer-main {
+  max-width: 350px;
+}
+
+.revolut-footer-logo {
+  height: 1.75rem;
+  margin-bottom: 1.5rem;
+  filter: brightness(0) invert(1);
+}
+
+.revolut-footer-description {
+  line-height: 1.7;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.revolut-footer-heading {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.revolut-footer-link {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  margin-bottom: 0.875rem;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.revolut-footer-link:hover {
+  color: #58a6ff;
+  transform: translateX(5px);
+}
+
+.revolut-footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .revolut-hero-title {
+    font-size: 3.5rem;
+  }
+
+  .revolut-floating-cards {
+    display: none;
+  }
+
+  .revolut-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .revolut-trust-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .revolut-footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .revolut-hero-title {
+    font-size: 2.75rem;
+  }
+
+  .revolut-hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .revolut-section-title {
+    font-size: 2.25rem;
+  }
+
+  .revolut-cta-title {
+    font-size: 2.75rem;
+  }
+
+  .revolut-footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .revolut-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}

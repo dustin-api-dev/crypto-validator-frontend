@@ -1,0 +1,353 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background */
+.skrill-login-bg {
+  min-height: 100vh;
+  background: #691c66;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2rem;
+}
+
+/* Header */
+.skrill-login-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: white;
+}
+
+.skrill-header-logo {
+  height: 2rem;
+}
+
+.skrill-language-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.skrill-flag {
+  font-size: 1.2rem;
+}
+
+.skrill-lang-text {
+  font-weight: 500;
+}
+
+/* Login Card */
+.skrill-login-card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.skrill-login-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.skrill-register-text {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.skrill-link {
+  color: #862165;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.skrill-link:hover {
+  text-decoration: underline;
+}
+
+/* Input Wrapper */
+.skrill-input-wrapper {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.skrill-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.skrill-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+  background: #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.skrill-input:focus {
+  outline: none;
+  border-color: #862165;
+  background: white;
+}
+
+/* Password Box */
+.skrill-password-box {
+  position: relative;
+}
+
+.skrill-eye-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.skrill-eye-icon:hover {
+  opacity: 1;
+}
+
+.skrill-eye-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Error Text */
+.skrill-error-text {
+  color: #d32f2f;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+/* Login Button */
+.skrill-login-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 6px;
+  border: none;
+  background: #d0d0d0;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: not-allowed;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.skrill-login-btn:not(:disabled) {
+  background: #862165;
+  color: white;
+  cursor: pointer;
+}
+
+.skrill-login-btn:not(:disabled):hover {
+  background: #6d1a52;
+}
+
+/* Forgot Link */
+.skrill-forgot-link {
+  display: block;
+  color: #862165;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.skrill-forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.skrill-login-footer {
+  position: absolute;
+  bottom: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.skrill-login-footer a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.skrill-login-footer a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.skrill-footer-divider {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Disclaimer */
+.skrill-login-disclaimer {
+  position: absolute;
+  bottom: 1rem;
+  max-width: 800px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0 2rem;
+}
+
+/* Result Card */
+.skrill-result-card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.skrill-result-card h2 {
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.skrill-result-card p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.skrill-login-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.skrill-login-actions button {
+  flex: 1;
+  padding: 14px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.skrill-login-actions button:first-child {
+  background: #862165;
+  color: white;
+}
+
+.skrill-login-actions button:first-child:hover {
+  background: #6d1a52;
+}
+
+.skrill-login-actions button:last-child {
+  background: #e0e0e0;
+  color: #1a1a1a;
+}
+
+.skrill-login-actions button:last-child:hover {
+  background: #d0d0d0;
+}
+
+/* Animations */
+.animate-fade {
+  animation: fadeIn 0.6s ease;
+}
+
+.animate-pop {
+  animation: popIn 0.6s ease;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes popIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.95); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+@keyframes spin {
+  to { 
+    transform: rotate(360deg); 
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skrill-login-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .skrill-login-card,
+  .skrill-result-card {
+    padding: 2rem 1.5rem;
+    margin: 0 1rem;
+  }
+
+  .skrill-login-footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 1rem;
+    bottom: 5rem;
+  }
+
+  .skrill-login-disclaimer {
+    font-size: 0.7rem;
+  }
+
+  .skrill-login-actions {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,112 @@
+.robinhood_header_body{
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 100px;
+}
+
+.robinhood_header_logo_container{
+    width: max-content;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    /* background-color: yellow; */
+}
+
+.robinhood_header_logo_container img{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    /* background-color: red; */
+}
+
+.robinhood_header_logo_container p{
+    color: #fff;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.robinhood_header_nav_container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.robinhood_menuactive, .robinhood_menunotactive{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.robinhood_menuactive{
+    color: #fff;
+}
+
+.robinhood_menunotactive{
+    color: #000;
+}
+
+.robinhood_header_button_container{
+    display: flex;
+    align-items: center;
+}
+
+.robinhood_header_button_container button{
+    width: max-content;
+    padding: 12px 30px;
+    color: #000;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    animation: bounce 2s infinite;/* Bounce for 2s */
+    transition: transform 0.4s; /* Optional for smoothness */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px); /* Bounces up */
+    }
+    60% {
+        transform: translateY(-8px); /* Smaller bounce */
+    }
+    80%, 100% {
+        transform: translateY(0); /* Rest for the remaining time */
+    }
+}
+
+
+@media screen and (max-width: 768px){
+    .robinhood_header_nav_container{
+        display: none;
+    }
+
+    .robinhood_header_body{
+        padding: 14px 16px;
+    }
+
+    .robinhood_header_button_container button{
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .robinhood_header_logo_container img{
+        width: 40px;
+        height: 40px;
+    }
+
+    .robinhood_header_logo_container p{
+        font-size: 18px;
+    }
+}

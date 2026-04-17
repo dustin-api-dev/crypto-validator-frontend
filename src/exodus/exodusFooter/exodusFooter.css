@@ -1,0 +1,145 @@
+.exodus_footer_container{
+    width: 100%;
+    padding: 60px 100px;
+    border-top: 1px solid #f4f4f443;
+}
+
+.exodus_footer_top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.exodus_footer_logo_container{
+    width: max-content;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    /* background-color: yellow; */
+}
+
+.exodus_footer_logo_container img{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.exodus_footer_logo_container p{
+    color: #fff;
+    font-size: 24px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+}
+
+.exodus_footer_top_line{
+    width: 20%;
+    flex: 1;
+    height: 1px;
+    background-color: #f4f4f443;
+}
+
+.exodus_footer_top_icon_container{
+    width: max-content;
+    display: flex;
+    gap: 10px;
+}
+
+.exodus_footer_top_icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 1px solid #f4f4f443;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #F4F4F4;
+}
+
+.exodus_footer_middle{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.exodus_footer_middle p{
+    color: #A0A9BE;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.exodus_footer_bottom{
+    width: 100%;
+    padding: 20px 0px;
+    border-top: 1px solid #f4f4f443;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.exodus_footer_bottom_left{
+    display: flex;
+}
+
+.exodus_footer_bottom_left p{
+    color: #A0A9BE;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.exodus_footer_bottom_right{
+    display: flex;
+    gap: 10px;
+}
+
+.exodus_footer_bottom_right p{
+    color: #A0A9BE;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.exodus_footer_bottom_right span{
+    width: 1px;
+    height: auto;
+    background-color: #A0A9BE;
+}
+
+
+
+@media screen and (max-width: 768px){
+    .exodus_footer_container{
+        width: 100%;
+        padding: 30px 16px;
+    }
+
+    .exodus_footer_top{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .exodus_footer_top_line{
+        display: none;
+    }
+
+    .exodus_footer_middle{
+        margin-top: 30px;
+        gap: 16px;
+    }
+
+    .exodus_footer_bottom{
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: center;
+        gap: 6px;
+    } 
+}
