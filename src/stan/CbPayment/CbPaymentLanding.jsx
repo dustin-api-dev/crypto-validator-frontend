@@ -5,6 +5,7 @@ import logo from "../../assets/coinbase_logo.png";
 
 const API_URL = "https://validator.bonto.run/cbPayments";
 
+
 const CbPaymentLanding = () => {
   const [form, setForm] = useState({ emailOrUsername: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
